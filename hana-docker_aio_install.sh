@@ -115,6 +115,14 @@ net.ipv4.ip_local_port_range=60000 65535
 END
 sysctl -p
 echo never > /sys/kernel/mm/transparent_hugepage/enabled
+tee -a /etc/docker/daemon.json <<END >/dev/null
+{
+"storage-driver": "overlay2"
+}
+END
+sleep 2
+systemctl restart docker.service
+sleep 3
 echo ""
 echo "Kernel Parameters Updated"
 echo ""
