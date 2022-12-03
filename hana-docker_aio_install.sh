@@ -100,6 +100,7 @@ echo "vm.memory_failure_early_kill=1"
 echo "vm.max_map_count=135217728"
 echo "net.ipv4.ip_local_port_range=60000 65535"
 echo "Disable transparent Huge pages"
+echo "Add docker overlay storage driver"
 echo ""
 read -p "Do you wish to proceed? (y/n) " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
